@@ -1,5 +1,10 @@
 # razer-problem
 
+## Contents: 
+- [Data Exploratory Analysis](explore-data.ipynb)
+- [Data Generation Process file](generate.py)
+- [Simulated data](simulated_data.csv)
+
 ## Questions
 1. What is source of this data file?
    
@@ -51,10 +56,4 @@
 11. (For 2nd column = `0`) Why the 4th column seems to be more sorted as the group/iteration increases?
 
     **Answer:** I guess 4th column represents some task difficulty (the lower the number the faster it completes?)
-
-## Contents:
- 
-- [Data Exploratory Analysis](explore-data.ipynb)
-- [Data Generation Process file](generate.py)
-- [Simulated data](simulated_data.csv)
 
