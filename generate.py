@@ -2,6 +2,7 @@ import time
 import random
 from scipy.stats import expon
 
+random.seed(1)
 
 def log(*args):
     with open('simulated_data.csv', 'a') as outfile:
@@ -41,10 +42,11 @@ type0_pattern1_cycle = [3, 4, 0, 5, 1]           # when col4=0 (5,10,17)
 type0_pattern2_cycle = [4, -1, 3, 5]             # when col4=1 (5,10,17)
 type0_pattern3_cycle = [4, 4, 0, 5, 5, 1]        # when col7=1 (17)
 type0_pattern4_cycle = [4, 4, 4, 0, 5, 5, 5, 1]  # when col7=2 (17)
-type0_pattern5_cycle = [0, 4, -1, 3, 4, 4, 0, 4, 5, 5, 5, 1, 5]  # when col7=1 (33)
+type0_pattern5_cycle = [4, -1, 3, 4, 4, 0, 4, 5, 5, 5, 1, 5]    # when col7=1 (33)
 type0_pattern6_cycle = [4, -1, 3, 4, 4, 0, 5, 5, 1, 5]          # when col4=1 & col6!=2 & col7!=2
 type0_pattern7_cycle = [4, 4, -1, 3, 4, 4, 0, 5 ,5, 5, 5, 1]    # when col4=2 & col6!=2 & col7==1
 type0_pattern8_cycle = [4, 4, -1, 3, 5, 5]                      # when col4=2 & col6!=2 & col7!=2
+
 type1_gap_stats = { # key: number of type0 rows
     5: 0.1105,
     10: 0.3790,
@@ -62,12 +64,12 @@ type1_results = {  # key: number of type0 rows
 first_group10 = True
 first_group17 = True
 first_group33 = True
+timestamp = time.time()
 for group in range(12):  # for each group
     first_pattern_c5[-2] = c5_cycle[group%3]
     second_pattern_c5[-1] = c5_cycle[group%3]
     
     # Generate -1 rows first
-    timestamp = time.time()
     if group < 3:
         num_rows = 47
         for j in range(num_rows):
@@ -88,6 +90,15 @@ for group in range(12):  # for each group
     column6_33 = [0]*8 + [1]*18 + [2]*2
     column7_33 = [0]*11 + [1]*9 + [2]*8
     
+    random.shuffle(type0_pattern1_cycle)
+    random.shuffle(type0_pattern2_cycle)
+    random.shuffle(type0_pattern3_cycle)
+    random.shuffle(type0_pattern4_cycle)
+    random.shuffle(type0_pattern5_cycle)
+    random.shuffle(type0_pattern6_cycle)
+    random.shuffle(type0_pattern7_cycle)
+    random.shuffle(type0_pattern8_cycle)
+    
     if first_group10:
         random.shuffle(column4_10)
     else:
@@ -105,8 +116,8 @@ for group in range(12):  # for each group
     first, first1, first2, first3 = True, True, True, True
 
     for k in range(num_type0):  # generate the rows
-        time.sleep(expon.rvs(type0_gap_stats[num_type0]))
-        timestamp = time.time()
+        sleep = expon.rvs(type0_gap_stats[num_type0])
+        timestamp += sleep
         
         if num_type0 == 5:  # trivial case
             log(timestamp, 0, group, 0, type0_pattern1_cycle[k], 0)
@@ -205,6 +216,7 @@ for group in range(12):  # for each group
                 first_group33 = False
 
     # Generate 1 rows
-    time.sleep(expon.rvs(type1_gap_stats[num_type0]))
-    timestamp = time.time()
+    sleep = expon.rvs(type1_gap_stats[num_type0])
+    timestamp += sleep
     log(timestamp, 1, group, type1_results[num_type0])
+    timestamp += 0.0005
