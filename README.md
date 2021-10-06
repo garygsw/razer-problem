@@ -46,7 +46,7 @@
     
 10. (For 2nd column = `0`) Where are there different number of rows with sizes `{5, 10, 17, 33}` for different groups?
 
-    **Answer:** It seems like is a common input group of size 5 with always the same data for all groups.
+    **Answer:** It seems the 5 is a common input to all groups, while others contain additional rows, which depends on values in 4th, 6th and 7th column.
 
 ## Data Generation Process:
 
