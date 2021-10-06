@@ -52,8 +52,9 @@
 
     **Answer:** I guess 4th column represents some task difficulty (the lower the number the faster it completes?)
 
-## Data Generation Process:
+## Contents:
+ 
+- [Data Exploratory Analysis](explore-data.ipynb)
+- [Data Generation Process file](generate.py)
+- [Simulated data](simulated_data.csv)
 
-```python
-# generate.py
-```
