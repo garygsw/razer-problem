@@ -30,9 +30,9 @@
 
 6. Why different groups have different time gaps?
 
-   **Answer:** It depends on the number of rows with 3rd column = `0`.
+   **Answer:** It depends on the number of rows with 2nd column = `0`.
 
-7. Why the last row with 2nd column = `0` to the row with 3rd column = `1` time gap is different for each group?
+7. Why the last row with 2nd column = `0` to the row with 2nd column = `1` time gap is different for each group?
 
    **Answer:** It depends on the number of rows with 2nd column = `0` within the group. It will take longer to for the row with 2nd column = `1` to appear.
    
