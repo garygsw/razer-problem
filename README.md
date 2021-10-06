@@ -11,9 +11,9 @@
    
    - 1st column is obvious, it represent unix timestamps
    - 2nd column represents some coded category: `{-1, 0, 1}`
-   - When 2nd column is `-1`: 4th and 5th represent some integer data in the range of `0` to `43`. No idea what they represent.
-   - When 2nd column is `0`: 4th,6th and 7th columns represent some coded category: `{0, 1, 2}`, and 5th column represents some integer data of range `-1` to `5`. The values of 4th,6th and 7th columns seems to determine the value of the 5th column to some extent. I guess they represent the inputs for each group. 
-   - When 2nd column is `1`: 4th column represent some coded category of `{0, 1}`. I guess they represent the outputs for each group.
+      - When 2nd column is `-1`: 4th and 5th represent some integer data in the range of `0` to `43`. No idea what they represent.
+      - When 2nd column is `0`: 4th,6th and 7th columns represent some coded category: `{0, 1, 2}`, and 5th column represents some integer data of range `-1` to `5`. The values of 4th,6th and 7th columns seems to determine the value of the 5th column to some extent. I guess they represent the inputs for each group. 
+      - When 2nd column is `1`: 4th column represent some coded category of `{0, 1}`. I guess they represent the outputs for each group.
    - 3rd column represents some group or iteration (total 12 of them)
  
 3. Why is there inconsistent number of fields per line?
