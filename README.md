@@ -47,6 +47,10 @@
 10. (For 2nd column = `0`) Where are there different number of rows with sizes `{5, 10, 17, 33}` for different groups?
 
     **Answer:** It seems the 5 is a common input to all groups, while others contain additional rows, which depends on values in 4th, 6th and 7th column.
+    
+11. (For 2nd column = `0`) Why the 4th column seems to be more sorted as the group/iteration increases?
+
+    **Answer:** I guess 4th column represents some task difficulty (the lower the number the faster it completes?)
 
 ## Data Generation Process:
 
